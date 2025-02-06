@@ -6,67 +6,139 @@ class CalculatorView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
+    return Container(
+      padding: const EdgeInsets.all(10.0),
       child: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
           TextField(
-            decoration: InputDecoration(hintText: "0", border: OutlineInputBorder()),
+            decoration: InputDecoration(hintText: "0"),
             keyboardType: TextInputType.none,
-            focusNode: AlwaysDisabledFocusNode(),
+            textAlign: TextAlign.right,
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               CustomElevatedButton(
                 onPressed: () {},
                 text: "c",
+                foregroundColor: Colors.red,
+                backgroundColor: Color.fromARGB(200, 234, 234, 234),
               ),
-              ElevatedButton(
+              CustomElevatedButton(
                 onPressed: () {},
-                child: Text(
-                  "()",
-                  style: TextStyle(fontSize: 24),
-                ),
-                style: ElevatedButton.styleFrom(
-                  shape: CircleBorder(),
-                  padding: EdgeInsets.all(23),
-                  backgroundColor: const Color.fromARGB(200, 234, 234, 234),
-                ),
+                text: "()",
+                backgroundColor: Color.fromARGB(200, 234, 234, 234),
+                foregroundColor: Colors.green,
+                fontSize: 20,
               ),
-              ElevatedButton(onPressed: () {}, child: Text("%")),
-              ElevatedButton(onPressed: () {}, child: Text("/")),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "%",
+                backgroundColor: Color.fromARGB(200, 234, 234, 234),
+                foregroundColor: Colors.green,
+                fontSize: 20,
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "/",
+                backgroundColor: Color.fromARGB(200, 234, 234, 234),
+                foregroundColor: Colors.green,
+              )
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(onPressed: () {}, child: Text("7")),
-              ElevatedButton(onPressed: () {}, child: Text("8")),
-              ElevatedButton(onPressed: () {}, child: Text("9")),
-              ElevatedButton(onPressed: () {}, child: Text("X")),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "7",
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "8",
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "9",
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "x",
+                backgroundColor: Color.fromARGB(200, 234, 234, 234),
+                foregroundColor: Colors.green,
+              ),
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(onPressed: () {}, child: Text("4")),
-              ElevatedButton(onPressed: () {}, child: Text("5")),
-              ElevatedButton(onPressed: () {}, child: Text("6")),
-              ElevatedButton(onPressed: () {}, child: Text("-")),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "4",
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "5",
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "6",
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "-",
+                backgroundColor: Color.fromARGB(200, 234, 234, 234),
+                foregroundColor: Colors.green,
+              ),
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(onPressed: () {}, child: Text("1")),
-              ElevatedButton(onPressed: () {}, child: Text("2")),
-              ElevatedButton(onPressed: () {}, child: Text("3")),
-              ElevatedButton(onPressed: () {}, child: Text("+")),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "1",
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "2",
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "3",
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "+",
+                backgroundColor: Color.fromARGB(200, 234, 234, 234),
+                foregroundColor: Colors.green,
+              ),
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              ElevatedButton(onPressed: () {}, child: Text("+/-")),
-              ElevatedButton(onPressed: () {}, child: Text("0")),
-              ElevatedButton(onPressed: () {}, child: Text(".")),
-              ElevatedButton(onPressed: () {}, child: Text("=")),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "(-",
+                fontSize: 20,
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "0",
+                fontSize: 20,
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: ".",
+              ),
+              CustomElevatedButton(
+                onPressed: () {},
+                text: "=",
+                backgroundColor: Color.fromARGB(200, 234, 234, 234),
+                foregroundColor: Colors.green,
+              ),
             ],
           )
         ],
@@ -74,17 +146,3 @@ class CalculatorView extends StatelessWidget {
     );
   }
 }
-
-class AlwaysDisabledFocusNode extends FocusNode {
-  @override
-  bool get hasFocus => false;
-}
-
-// class CustomElevatedButtonStyle {
-//   final ButtonStyle elevatedButtonDesign;
-//   CustomElevatedButtonStyle({Color? backgroundColor, Color? foreGroundColor}) {
-//     this.elevatedButtonDesign = ElevatedButton.styleFrom(backgroundColor: backgroundColor ?? Colors.white, foregroundColor: foreGroundColor ?? Colors.black, padding: EdgeInsets.all(24), shape: CircleBorder());
-//   }
-// }
-
-
